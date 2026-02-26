@@ -1,5 +1,6 @@
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
+import profile from "../images/profile.jpg";
 
 export default function About() {
 
@@ -85,36 +86,18 @@ export default function About() {
       <div className="px-10 py-16 text-center">
         <h2 className="text-3xl font-bold mb-10">Our Team</h2>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          
-          <div className="bg-white p-6 rounded-lg shadow hover:shadow-xl transition">
+        <div className="flex justify-center">
+    
+          <div className="bg-white p-6 rounded-lg shadow hover:shadow-xl transition w-72">
+            {/* Optional Image */}
             <img
-              src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=300"
+              src={profile}
               alt="team"
               className="w-24 h-24 mx-auto rounded-full object-cover"
             />
-            <h3 className="mt-4 font-semibold">Sarah Johnson</h3>
-            <p className="text-gray-500">CEO & Founder</p>
-          </div>
 
-          <div className="bg-white p-6 rounded-lg shadow hover:shadow-xl transition">
-            <img
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300"
-              alt="team"
-              className="w-24 h-24 mx-auto rounded-full object-cover"
-            />
-            <h3 className="mt-4 font-semibold">Michael Lee</h3>
-            <p className="text-gray-500">Head of Operations</p>
-          </div>
-
-          <div className="bg-white p-6 rounded-lg shadow hover:shadow-xl transition">
-            <img
-              src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=300"
-              alt="team"
-              className="w-24 h-24 mx-auto rounded-full object-cover"
-            />
-            <h3 className="mt-4 font-semibold">Priya Sharma</h3>
-            <p className="text-gray-500">HR Manager</p>
+            <h3 className="mt-4 font-semibold text-xl">Devaram CM</h3>
+            <p className="text-gray-500">Founder & Developer</p>
           </div>
 
         </div>
