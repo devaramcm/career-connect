@@ -5,20 +5,25 @@ export default function SignIn() {
   const [name, setName] = useState("");
   const navigate = useNavigate();
 
-  const handleLogin = () => {
+  const handleLogin = (e) => {
+    e.preventDefault(); // 🔥 prevents page reload
+
     if (name.trim() === "") return alert("Enter your name");
 
-    // Save user (temporary)
-    localStorage.setItem("user", name);
+    localStorage.setItem("user", name.trim());
 
-    // Go to dashboard
     navigate("/events");
     window.location.reload();
   };
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-50">
-      <div className="bg-white p-8 rounded-lg shadow w-80">
+      
+      {/* FORM */}
+      <form
+        onSubmit={handleLogin} // 🔥 IMPORTANT
+        className="bg-white p-8 rounded-lg shadow w-80"
+      >
 
         <h2 className="text-2xl font-bold mb-6 text-center">Sign In</h2>
 
@@ -28,16 +33,18 @@ export default function SignIn() {
           className="w-full p-3 border rounded mb-4"
           value={name}
           onChange={(e) => setName(e.target.value)}
+          autoFocus
         />
 
         <button
-          onClick={handleLogin}
+          type="submit" // 🔥 IMPORTANT
           className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700"
         >
           Sign In
         </button>
 
-      </div>
+      </form>
+
     </div>
   );
 }
