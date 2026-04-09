@@ -21,7 +21,7 @@ export default function SignIn() {
     }
 
     try {
-      const res = await fetch("http://localhost:5000/api/auth/login", {
+      const res = await fetch("https://career-connect-lk0b.onrender.com/api/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
