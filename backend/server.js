@@ -14,8 +14,14 @@ const app = express();
 
 // MIDDLEWARE
 app.use(cors({
-  origin: "http://localhost:5173",
+  origin: [
+    "http://localhost:5173",
+    "https://career-connect-theta-seven.vercel.app"
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
 }));
+
 app.use(express.json());
 
 // TEST ROUTE
